@@ -8,7 +8,7 @@ class LoginPage(BasePage):
 
     USERNAME_SELECTOR = '#user-name'
     PASSWORD_SELECTOR = '#password'
-    LOGIN_BUTTON_SELECTOR = '.submit-button'
+    LOGIN_BUTTON_SELECTOR = '[data-test="login-button"]'
 
     def login(self, username, password):
         self.navigate_to()
@@ -16,3 +16,6 @@ class LoginPage(BasePage):
         self.wait_for_selector_and_fill(self.PASSWORD_SELECTOR, password )
         self.wait_for_selector_and_click(self.LOGIN_BUTTON_SELECTOR)
         self.assert_text_present_on_page('Products')
+
+    def check_is_logout(self):
+        self.assert_element_is_visible(self.LOGIN_BUTTON_SELECTOR)
