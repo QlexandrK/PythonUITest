@@ -26,3 +26,10 @@ def test_filters_in_products(browser):
     page = browser.new_page()
     login_page = LoginPage(page)
     inventory_page = InventoryPage(page)
+    cart_list_page = CartListPage(page)
+
+
+    login_page.login('standard_user', 'secret_sauce')
+    inventory_page.add_first_item_to_cart()
+    cart_list_page.remove_item_in_cart()
+    checkout_page = CheckoutPage(page)
