@@ -6,9 +6,9 @@ class LoginPage(BasePage):
         super().__init__(page)
         self._endpoint = ''
 
-     USERNAME_SELECTOR = '#user-name'
-     PASSWORD_SELECTOR = '#password'
-     LOGIN_BUTTON_SELECTOR = '.submit-button'
+    USERNAME_SELECTOR = '#user-name'
+    PASSWORD_SELECTOR = '#password'
+    LOGIN_BUTTON_SELECTOR = '.submit-button'
 
     def login(self, username, password):
         self.navigate_to()

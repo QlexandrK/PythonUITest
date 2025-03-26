@@ -3,7 +3,7 @@ from page.base_page import BasePage
 
 class InventoryPage(BasePage):
     ADD_TO_CART_SELECTOR = ".inventory_item >> text='Add to cart'"
-    SHOPPING_CART_LINK_SELECTOR = "'.shopping_cart_link'"
+    SHOPPING_CART_LINK_SELECTOR = '[data-test="shopping-cart-link"]'
 
     def __init__(self, page):
         super().__init__(page)

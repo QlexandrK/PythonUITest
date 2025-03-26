@@ -1,7 +1,9 @@
+# import Faker
 import pytest
-from constant import HEADERS, BASE_URL
+# from constant import HEADERS, BASE_URL
+from playwright.sync_api import sync_playwright
 
-faker = Faker()
+# faker = Faker()
 
 
 @pytest.fixture(scope="session")
