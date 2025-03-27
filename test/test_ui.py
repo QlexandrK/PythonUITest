@@ -5,7 +5,7 @@ from page.login_page import LoginPage
 from page.cart_list_page import CartListPage
 from page.checkout_complate_page import CheckoutCompletePage
 
-
+#Добавление товара в корзину и заолнение личных данных
 def test_add_items_and_checkout(browser):
     page = browser.new_page()
     login_page = LoginPage(page)
@@ -21,7 +21,7 @@ def test_add_items_and_checkout(browser):
     cart_list_page.finish_checkout()
     checkout_complete_page.checkout_complete()
 
-
+# Удаление позиции из корзины
 def test_remove_item(browser):
     page = browser.new_page()
     login_page = LoginPage(page)
@@ -35,7 +35,7 @@ def test_remove_item(browser):
     cart_list_page.continue_shopping_button()
 
 
-
+#Проверка видимости значка корзины при добавлении товара
 def test_badge_is_visible(browser):
     page = browser.new_page()
     login_page = LoginPage(page)
@@ -48,7 +48,7 @@ def test_badge_is_visible(browser):
     cart_list_page.continue_shopping_button()
     inventory_page.assert_badge_is_visible()
 
-
+#Сортировка товара
 def test_product_sort_container(browser):
     page = browser.new_page()
     login_page = LoginPage(page)
@@ -57,7 +57,7 @@ def test_product_sort_container(browser):
     login_page.login('standard_user', 'secret_sauce')
     inventory_page.product_sort_container()
 
-
+#Проверка выхода из системы
 def test_logout_from_system(browser):
     page = browser.new_page()
     login_page = LoginPage(page)
