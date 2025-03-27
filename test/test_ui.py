@@ -21,6 +21,7 @@ def test_add_items_and_checkout(browser):
     cart_list_page.finish_checkout()
     checkout_complete_page.checkout_complete()
 
+
 # Удаление позиции из корзины
 def test_remove_item(browser):
     page = browser.new_page()
@@ -48,6 +49,7 @@ def test_badge_is_visible(browser):
     cart_list_page.continue_shopping_button()
     inventory_page.assert_badge_is_visible()
 
+
 #Сортировка товара
 def test_product_sort_container(browser):
     page = browser.new_page()
@@ -55,7 +57,8 @@ def test_product_sort_container(browser):
     inventory_page = InventoryPage(page)
 
     login_page.login('standard_user', 'secret_sauce')
-    inventory_page.product_sort_container()
+    inventory_page.product_sort_container('za')
+
 
 #Проверка выхода из системы
 def test_logout_from_system(browser):
@@ -68,3 +71,13 @@ def test_logout_from_system(browser):
     inventory_page.logout_in_burger()
     login_page.check_is_logout()
 
+
+def test_add_to_cart_all_items(browser):
+    page = browser.new_page()
+    login_page = LoginPage(page)
+    inventory_page = InventoryPage(page)
+
+    login_page.login('standard_user', 'secret_sauce')
+    inventory_page.add_to_cart_tshirt()
+    inventory_page.add_to_cart_bike_light()
+    inventory_page.add_first_item_to_cart()
