@@ -18,6 +18,9 @@ class InventoryPage(BasePage):
     def add_first_item_to_cart(self):
         self.wait_for_selector_and_click(self.ADD_TO_CART_SELECTOR)
         self.assert_element_is_visible(self.SHOPPING_CART_LINK_SELECTOR)
+        # self.wait_for_selector_and_click(self.SHOPPING_CART_LINK_SELECTOR)
+
+    def shopping_cart_link_button(self):
         self.wait_for_selector_and_click(self.SHOPPING_CART_LINK_SELECTOR)
 
     def add_to_cart_bike_light(self):

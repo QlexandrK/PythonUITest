@@ -16,6 +16,7 @@ def test_add_items_and_checkout(browser):
 
     login_page.login('standard_user', 'secret_sauce')
     inventory_page.add_first_item_to_cart()
+    inventory_page.shopping_cart_link_button()
     checkout_page.start_checkout()
     checkout_page.fill_checkout_form("John", "Doe", '12345' )
     cart_list_page.finish_checkout()
@@ -32,6 +33,7 @@ def test_remove_item(browser):
 
     login_page.login('standard_user', 'secret_sauce')
     inventory_page.add_first_item_to_cart()
+    inventory_page.shopping_cart_link_button()
     cart_list_page.remove_item_in_cart()
     cart_list_page.continue_shopping_button()
 
@@ -46,6 +48,7 @@ def test_badge_is_visible(browser):
 
     login_page.login('standard_user', 'secret_sauce')
     inventory_page.add_first_item_to_cart()
+    inventory_page.shopping_cart_link_button()
     cart_list_page.continue_shopping_button()
     inventory_page.assert_badge_is_visible()
 
@@ -84,6 +87,7 @@ def test_add_to_cart_all_items(browser):
     inventory_page.add_to_cart_tshirt()
     inventory_page.add_to_cart_bike_light()
     inventory_page.add_first_item_to_cart()
+    inventory_page.shopping_cart_link_button()
     checkout_page.start_checkout()
     checkout_page.fill_checkout_form("John", "Doe", '12345' )
     cart_list_page.finish_checkout()
